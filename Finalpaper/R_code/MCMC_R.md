@@ -14,6 +14,7 @@ library(bayesplot)
 library(ggplot2)
 library(rstanarm)
 library(data.table)
+library(stargazer)
 #load data from mlogit package
 data(Cracker)
 crack <- Cracker
@@ -156,7 +157,6 @@ for (i in 1:3292){
 
 
 dt <- data.table(crack)
-rm(crack)
 
 #Data cleaning
 #No.Trips
@@ -194,23 +194,22 @@ plot(spec$loglike)
 apply(spec$betadraw,2,mean)
 apply(spec$betadraw,2,FUN = function(x) quantile(x, probs = c(0.025, 0.5, 0.975)))
 
-install.packages("stargazer") 
-library(stargazer)
-stargazer(spec)
 
+Cr <- mlogit.data(Cracker, shape = "wide", choice = "choice",
+                  varying = c(2:13))
 
-
-
+Cracker.ml <- mlogit(choice ~ price + disp + feat, data = Cr)
+summary(Cracker.ml)
 
 library(data.table)
-crack <- crack[ ,c(1:13 ,15:30 ,14)]
-setDT(crack)[,choice.sunshine:= (choice == 'sunshine') + 0L, by= id]
-setDT(crack)[,choice.keebler:= (choice == 'keebler') + 0L, by= id]
-setDT(crack)[,choice.nabisco:= (choice == 'nabisco') + 0L, by= id]
-setDT(crack)[,choice.private:= (choice == 'private') + 0L, by= id]
+crack_ <- crack[ ,c(1:13 ,15:30 ,14)]
+setDT(crack_)[,choice.sunshine:= (choice == 'sunshine') + 0L, by= id]
+setDT(crack_)[,choice.keebler:= (choice == 'keebler') + 0L, by= id]
+setDT(crack_)[,choice.nabisco:= (choice == 'nabisco') + 0L, by= id]
+setDT(crack_)[,choice.private:= (choice == 'private') + 0L, by= id]
 
 
-cr <- mlogit.data(crack, shape = "wide", choice = "choice",
+cr <- mlogit.data(crack_, shape = "wide", choice = "choice",
                   varying = 2:29)
 
 cr.ml <- mlogit(choice ~ price + disp + feat, data = cr)
@@ -224,9 +223,6 @@ texreg(list('MNL(Null)' = cr.ml, 'MNL(loss aversion-m)' = cr.mlm, 'MNL(loss aver
        digits = 3, float.pos = "hbt", label = "tab:risktr", single.row = TRUE,
        caption = "Cracker Market")
 
-yr <- mlogit.data(crack, shape = "wide", choice = "choice",
-                  varying = c(c(2:9), c(15:22)))
-
 
 yr.ml <- mlogit(choice ~ gain^2 + loss^2 + disp + feat, data = cr)
 yr.ml1 <- mlogit(choice ~ gain + loss + disp + feat |0, data = cr)
@@ -238,6 +234,8 @@ texreg(list('MNL(Null)' = Cracker.ml, 'MNL(loss aversion)' = yr.ml1),
        digits = 3, float.pos = "hbt", label = "tab:risktr", single.row = TRUE,
        caption = "Transportation choices.")
 
+
+### rjag way to draw the MCMC
 model = "
 model 
 {
@@ -416,13 +414,5 @@ jmods.samp = jags.samples(jmods,c("a.mu","a.tau"),5000)
 jmods.coda = coda.samples(jmods,c("a.mu"),1000)
 jmods.samp
 plot(jmods.coda)
-
-
-
-
-Cr <- mlogit.data(Cracker, shape = "wide", choice = "choice",
-                  varying = c(2:13))
-
-Cracker.ml <- mlogit(choice ~ price + disp + feat, data = Cr)
 ```
 
