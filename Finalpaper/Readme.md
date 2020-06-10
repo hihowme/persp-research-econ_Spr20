@@ -10,8 +10,9 @@ I estimate a multinomial logit reference-dependent model with a mixture of norma
 
 ## Data
 
-- [Cracker Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/crack_market.csv)
-- [Yogurt Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/yogurt100.csv)
+
+- [Cracker Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/crack_market.csv) data from the `mlogit` package in R, and can be found in the data section.
+- [Yogurt Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/yogurt100.csv) data from the `bayesm` package in R, and can be found in the data section.
 
 ## Code
 
