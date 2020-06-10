@@ -6,13 +6,13 @@ I estimate a multinomial logit reference-dependent model with a mixture of norma
 
 ## Paper
 
-[Loss Aversion Estimation in Brand Choice Using Markov Chain Mont](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/finalpaper/Finalpaper_haihao.pdf)
+- [Loss Aversion Estimation in Brand Choice Using Markov Chain Mont](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/finalpaper/Finalpaper_haihao.pdf)
 
 ## Data
 
-[Cracker Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/crack_market.csv)\
-[Yogurt Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/yogurt100.csv)
+- [Cracker Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/crack_market.csv)\
+- [Yogurt Market Choice Data](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/data/yogurt100.csv)
 
 ## Code
 
-[MCMC Implementation Code in R](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/R_code/MCMC_R.md)
+- [MCMC Implementation Code in R](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/R_code/MCMC_R.md)
