@@ -6,12 +6,12 @@ I estimate a multinomial logit reference-dependent model with a mixture of norma
 
 ### Paper
 
-[]
+[Loss Aversion Estimation in Brand Choice Using Markov Chain Mont]()
 
 ### Data
 
-[]
-
+[Cracker Market Choice Data]()\
+[Yogurt Market Choice Data]()
 ### Code
 
-[]
+[MCMC Implementation Code in R](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/R_code/MCMC_R.md)
