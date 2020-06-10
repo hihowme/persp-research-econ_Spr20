@@ -6,7 +6,7 @@ I estimate a multinomial logit reference-dependent model with a mixture of norma
 
 ## Paper
 
-- [Loss Aversion Estimation in Brand Choice Using Markov Chain Mont](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/finalpaper/Finalpaper_haihao.pdf)
+- [Loss Aversion Estimation in Brand Choice Using Markov Chain Monte Carlo](https://github.com/hihowme/persp-research-econ_Spr20/blob/master/Finalpaper/finalpaper/Finalpaper_haihao.pdf)
 
 ## Data
 
